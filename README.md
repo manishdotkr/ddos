@@ -13,7 +13,7 @@ docker pull ghcr.io/manishdotkr/plow:latest
 To run `plow` using the Docker image, use the command below:
 
 ```sh
-docker run -it --name plow ghcr.io/manishdotkr/plow:latest plow -c <concurrent_connections> -n <number_of_requests> --timeout <timeout_for_each_request> <domain_name>
+docker run -it --name plow ghcr.io/manishdotkr/plow:<tag> plow -c <concurrent_connections> -n <number_of_requests> --timeout <timeout_for_each_request> <domain_name>
 ```
 
 ### Explanation of Flags
@@ -26,7 +26,7 @@ docker run -it --name plow ghcr.io/manishdotkr/plow:latest plow -c <concurrent_c
 To send **2000 requests** concurrently with **50 connections** and a **5-minute timeout**, run:
 
 ```sh
-docker run -it --name plow ghcr.io/manishdotkr/plow:latest plow -c 50 -n 2000 --timeout 5m https://manish.kr
+docker run -it --name plow ghcr.io/manishdotkr/plow:1.0.0 plow -c 50 -n 2000 --timeout 5m https://manish.kr
 ```
 
 This will stress-test the given domain (`https://manish.kr`) using Plow inside a Docker container.
